@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CityEntity" representedClassName=".CityEntity" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="sortedNumber" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="coordinate" maxCount="1" deletionRule="Cascade" destinationEntity="CoordinateEntity" inverseName="city" inverseEntity="CoordinateEntity"/>
+    </entity>
+    <entity name="CoordinateEntity" representedClassName=".CoordinateEntity" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityEntity" inverseName="coordinate" inverseEntity="CityEntity"/>
+    </entity>
+    <elements>
+        <element name="CityEntity" positionX="-365.99609375" positionY="17.0234375" width="128" height="88"/>
+        <element name="CoordinateEntity" positionX="-188.95703125" positionY="191.015625" width="128" height="88"/>
+    </elements>
+</model>

@@ -1,0 +1,57 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Alex on 14.12.2020.
+  
+*/
+
+"Weather" = "Погода";
+"New City" = "Новый город";
+"Add" = "Добавить";
+"Cancel" = "Отмена";
+"enter new city name" = "введите новое имя города";
+"for name" = "для имени";
+"not found location" = "не найдено местопложение";
+"Ok" = "Ok";
+"in Map" = "на карте";
+"Rename" = "Переименовать";
+"This city name" = "Это имя города";
+"already exists." = "уже добавлено.";
+"Delete" = "Удалить";
+"search city" = "поиск города";
+"m/s" = "м/с";
+"mmHg" = "мм.рт.ст";
+"clear" = "ясно";
+"partly-cloudy" = "малооблачно";
+"cloudy" = "облачно с прояснениями";
+"overcast" = "пасмурно";
+"drizzle" = "морось";
+"light-rain" = "небольшой дождь";
+"rain" = "дождь";
+"moderate-rain" = "умеренно сильный дождь";
+"heavy-rain" = "сильный дождь";
+"continuous-heavy-rain" = "длительный сильный дождь";
+"showers" = "ливень";
+"wet-snow" = "дождь со снегом";
+"light-snow" = "небольшой снег";
+"snow" = "снег";
+"snow-showers" = "снегопад";
+"hail" = "град";
+"thunderstorm" = "гроза";
+"thunderstorm-with-rain" = "дождь с грозой";
+"thunderstorm-with-hail" = "гроза с градом";
+"error" = "ошибка";
+"night" = "ночь";
+"morning" = "утро";
+"day" = "день";
+"evening" = "вечер";
+"nw" = "сев-зап";
+"n" = "северное";
+"ne" = "сев-вост";
+"e" = "восточное";
+"se" = "юго-вост";
+"s" = "южное";
+"sw" = "юго-зап";
+"w" = "западное";
+"с" = "штиль";

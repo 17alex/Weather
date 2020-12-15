@@ -1,0 +1,57 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Alex on 14.12.2020.
+  
+*/
+
+"Weather" = "Weather";
+"New City" = "New City";
+"Add" = "Add";
+"Cancel" = "Cancel";
+"enter new city name" = "enter new city name";
+"for name" = "for name";
+"not found location" = "not found location";
+"Ok" = "Ok";
+"in Map" = "in Map";
+"Rename" = "Rename";
+"This city name" = "This city name";
+"already exists." = "already exists.";
+"Delete" = "Delete";
+"search city" = "search city";
+"m/s" = "m/s";
+"mmHg" = "mmHg";
+"clear" = "clear";
+"partly-cloudy" = "partly-cloudy";
+"cloudy" = "cloudy";
+"overcast" = "overcast";
+"drizzle" = "drizzle";
+"light-rain" = "light-rain";
+"rain" = "rain";
+"moderate-rain" = "moderate-rain";
+"heavy-rain" = "heavy-rain";
+"continuous-heavy-rain" = "continuous-heavy-rain";
+"showers" = "showers";
+"wet-snow" = "wet-snow";
+"light-snow" = "light-snow";
+"snow" = "snow";
+"snow-showers" = "snow-showers";
+"hail" = "hail";
+"thunderstorm" = "thunderstorm";
+"thunderstorm-with-rain" = "thunderstorm-with-rain";
+"thunderstorm-with-hail" = "thunderstorm-with-hail";
+"error" = "error";
+"night" = "night";
+"morning" = "morning";
+"day" = "day";
+"evening" = "evening";
+"nw" = "n-west";
+"n" = "north";
+"ne" = "n-east";
+"e" = "east";
+"se" = "s-east";
+"s" = "south";
+"sw" = "s-west";
+"w" = "west";
+"с" = "calm";
