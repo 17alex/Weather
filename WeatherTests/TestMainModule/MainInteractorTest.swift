@@ -58,8 +58,12 @@ class MockNetworkManager: NetworkManagerProtocol {
 class MockStoreManager: StoreManagerProtocol {
     
     var storeCities = [
-        City(name: "StoreCity", coordinate: CLLocationCoordinate2D(latitude: 12345, longitude: 67890))
+        City(name: "StoreCity", sortedNumber: 0, coordinate: CLLocationCoordinate2D(latitude: 12345, longitude: 67890))
     ]
+    
+    func loadCitiesFromStore(complete: @escaping ([City]) -> Void) {
+        
+    }
     
     func loadCitiesFromStore() -> [City] {
         return storeCities
@@ -81,8 +85,12 @@ class MockLocationManager: LocationManagerProtocol {
 }
 
 class MockMainPresenter: MainInteractorOutput {
-    
+        
     var testCity: City!
+    
+    func didAlreadyExists(city: City) {
+        
+    }
     
     func didUpdate(for city: City) {
         testCity = city
@@ -133,7 +141,7 @@ class MainInteractorTest: XCTestCase {
 
     func testLoadWeather() {
         XCTAssertEqual(interactor.citiesWeather.count, 0)
-        let testCity = City(name: "TestCityName", coordinate: CLLocationCoordinate2D(latitude: 66, longitude: 77))
+        let testCity = City(name: "TestCityName", sortedNumber: 0, coordinate: CLLocationCoordinate2D(latitude: 66, longitude: 77))
         interactor.loadWeather(for: testCity)
         XCTAssertEqual(interactor.citiesWeather.count, 1)
         XCTAssertEqual(presenter.testCity, testCity)

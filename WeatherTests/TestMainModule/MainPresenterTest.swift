@@ -12,12 +12,12 @@ import CoreLocation
 
 class MockView: MainViewInput {
     
-    
     var updateIndex: Int?
     var index: Int?
     var showAlert = false
     var cityName = ""
     var error: Error = ""
+    var boolVar: Bool = false
     
     func updateWeather(forRow index: Int) {
         updateIndex = index
@@ -47,9 +47,19 @@ class MockView: MainViewInput {
     func showAlertEnterDublicate(cityName: String) {
         self.cityName = cityName
     }
+    
+    func showAlertAlreadyExists(cityName: String) {
+        self.cityName = cityName
+    }
+    
+    func activityIndicator(animate: Bool) {
+        boolVar = animate
+    }
 }
 
 class MockMainRouter: MainRouterProtocol {
+    
+    
     var city: String?
     var weatherModel: WeatherModel?
     
@@ -65,6 +75,10 @@ class MockMainRouter: MainRouterProtocol {
     func showMap(for cityName: String, changeCoordinateCallback: @escaping (CLLocationCoordinate2D) -> Void) {
         
     }
+    
+    func dismiss() {
+        
+    }
 }
 
 class MockInteractor: MainInteractorInput {
@@ -75,6 +89,18 @@ class MockInteractor: MainInteractorInput {
     var addCity: City!
     
     func start() {
+        
+    }
+    
+    func add(new cityName: String, coordinate: CLLocationCoordinate2D) {
+        
+    }
+    
+    func reorderCity(at fromIndex: Int, to toIndex: Int) {
+        
+    }
+    
+    func searchCity(with text: String) {
         
     }
     
@@ -160,8 +186,8 @@ class MainPresenterTest: XCTestCase {
     }
     
     func testDidAdd() {
-        let testCity1 = City(name: "Moscow", coordinate: CLLocationCoordinate2D(latitude: 11, longitude: 22))
-        let testCity2 = City(name: "Piter", coordinate: CLLocationCoordinate2D(latitude: 33, longitude: 44))
+        let testCity1 = City(name: "Moscow", sortedNumber: 0, coordinate: CLLocationCoordinate2D(latitude: 11, longitude: 22))
+        let testCity2 = City(name: "Piter", sortedNumber: 1, coordinate: CLLocationCoordinate2D(latitude: 33, longitude: 44))
         interactor.citiesForScreen = [testCity1, testCity2]
         let testIndex = 1
         presenter.didAdd(newCity: interactor.citiesForScreen[testIndex])
@@ -169,8 +195,8 @@ class MainPresenterTest: XCTestCase {
     }
     
     func testDidUpdate() {
-        let testCity1 = City(name: "Moscow", coordinate: CLLocationCoordinate2D(latitude: 11, longitude: 22))
-        let testCity2 = City(name: "Piter", coordinate: CLLocationCoordinate2D(latitude: 33, longitude: 44))
+        let testCity1 = City(name: "Moscow", sortedNumber: 0, coordinate: CLLocationCoordinate2D(latitude: 11, longitude: 22))
+        let testCity2 = City(name: "Piter", sortedNumber: 1, coordinate: CLLocationCoordinate2D(latitude: 33, longitude: 44))
         interactor.citiesForScreen = [testCity1, testCity2]
         let testIndex = 1
         presenter.didUpdate(for: interactor.citiesForScreen[testIndex])
