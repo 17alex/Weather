@@ -13,6 +13,7 @@ class Assembly {
     func createMain() -> UIViewController {
         let networkManager = NetworkManager()
         let locationManager = LocationManager()
+//        let storeManager = RealmStore()
         let storeManager = CoreDataStore()
 //        let storeManager = UserDefaultsStore()
         let interactor = MainInteractor()

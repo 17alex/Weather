@@ -18,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="mn6-jo-su1">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <rect key="frame" x="134.5" y="375.5" width="145" height="145"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="8NQ-FG-4de"/>
-                                    <constraint firstAttribute="height" constant="150" id="Vp8-xZ-7ud"/>
+                                    <constraint firstAttribute="width" secondItem="mn6-jo-su1" secondAttribute="height" multiplier="1:1" id="C2E-gA-0O8"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mn6-jo-su1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6Qa-DT-SeP"/>
-                            <constraint firstItem="mn6-jo-su1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="78G-Fs-Hzh"/>
+                            <constraint firstItem="mn6-jo-su1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="55u-kB-cR6"/>
+                            <constraint firstItem="mn6-jo-su1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ddL-I9-ntq"/>
+                            <constraint firstItem="mn6-jo-su1" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.35" id="mk7-6U-5KB"/>
                         </constraints>
                     </view>
                 </viewController>

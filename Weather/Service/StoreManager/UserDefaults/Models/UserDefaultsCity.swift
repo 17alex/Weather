@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoreCity: Codable {
+struct UserDefaultsCity: Codable {
     let name: String
     let sortedNumber: Int16
     let latitude: Double

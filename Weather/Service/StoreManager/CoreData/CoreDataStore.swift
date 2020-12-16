@@ -41,7 +41,6 @@ class CoreDataStore {
         let fetchRequest: NSFetchRequest = CityEntity.fetchRequest()
         do {
             let cityEntities = try context.fetch(fetchRequest)
-            print("load \(cityEntities.count) city from store for delete all")
             cityEntities.forEach { context.delete($0) }
             saveContext()
         } catch {
@@ -70,11 +69,17 @@ extension CoreDataStore: StoreManagerProtocol {
     
     func loadCitiesFromStore(complete: @escaping ([City]) -> Void) {
         let fetchRequest: NSFetchRequest = CityEntity.fetchRequest()
-//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(CityEntity.sortedNumber), ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(CityEntity.sortedNumber), ascending: true)]
         do {
             let cityEntities = try context.fetch(fetchRequest)
-            print("load \(cityEntities.count) city from store")
-            let cities = cityEntities.map { return City(cityEntity: $0) }
+            let cities: [City] = cityEntities.map {
+                City(name: $0.name,
+                     sortedNumber: $0.sortedNumber,
+                     coordinate: CLLocationCoordinate2D(
+                        latitude: $0.coordinate.latitude,
+                        longitude: $0.coordinate.longitude)
+                )
+            }
             complete(cities)
         } catch {
             let nserror = error as NSError

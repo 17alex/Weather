@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		FA040F46255A6DD4008AE988 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA040F45255A6DD4008AE988 /* MainRouter.swift */; };
-		FA085958258230FA00FAE9E1 /* StoreCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA085957258230FA00FAE9E1 /* StoreCity.swift */; };
+		FA085958258230FA00FAE9E1 /* UserDefaultsCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA085957258230FA00FAE9E1 /* UserDefaultsCity.swift */; };
 		FA08595C2582320900FAE9E1 /* LocationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08595B2582320900FAE9E1 /* LocationManagerProtocol.swift */; };
 		FA0859602582324700FAE9E1 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08595F2582324700FAE9E1 /* NetworkManagerProtocol.swift */; };
 		FA0C6649256B88F700D8ED39 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C6648256B88F700D8ED39 /* WeatherModel.swift */; };
+		FA0C703A2589E6620084F7C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA0C70392589E6620084F7C2 /* RealmSwift */; };
+		FA0C703E2589E7D20084F7C2 /* RealmStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C703D2589E7D20084F7C2 /* RealmStore.swift */; };
+		FA0C70432589EFD00084F7C2 /* CityRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C70422589EFD00084F7C2 /* CityRealm.swift */; };
 		FA0E2847256CD3910009DC12 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E2845256CD3910009DC12 /* MapViewController.swift */; };
 		FA0E2848256CD3910009DC12 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0E2846256CD3910009DC12 /* MapViewController.xib */; };
 		FA0E284C256CD5F50009DC12 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E284B256CD5F50009DC12 /* MapPresenter.swift */; };
@@ -65,10 +68,12 @@
 
 /* Begin PBXFileReference section */
 		FA040F45255A6DD4008AE988 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		FA085957258230FA00FAE9E1 /* StoreCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCity.swift; sourceTree = "<group>"; };
+		FA085957258230FA00FAE9E1 /* UserDefaultsCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsCity.swift; sourceTree = "<group>"; };
 		FA08595B2582320900FAE9E1 /* LocationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerProtocol.swift; sourceTree = "<group>"; };
 		FA08595F2582324700FAE9E1 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		FA0C6648256B88F700D8ED39 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		FA0C703D2589E7D20084F7C2 /* RealmStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStore.swift; sourceTree = "<group>"; };
+		FA0C70422589EFD00084F7C2 /* CityRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRealm.swift; sourceTree = "<group>"; };
 		FA0E2845256CD3910009DC12 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FA0E2846256CD3910009DC12 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		FA0E284B256CD5F50009DC12 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
@@ -120,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0C703A2589E6620084F7C2 /* RealmSwift in Frameworks */,
 				FA1C2280255425A500F1B1B9 /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +140,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0C70412589EF9D0084F7C2 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C70422589EFD00084F7C2 /* CityRealm.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		FA0C704C2589F92D0084F7C2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA5CE775257F636A00E10787 /* Models */,
+				FACFCDAA257A5D8E00493E65 /* CoreDataStore.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FA0C704E2589F9630084F7C2 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C70502589F9F60084F7C2 /* Models */,
+				FACE03AD25540CD0005C776E /* UserDefaultsStore.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		FA0C704F2589F9B20084F7C2 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FA0C70412589EF9D0084F7C2 /* RealmModels */,
+				FA0C703D2589E7D20084F7C2 /* RealmStore.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		FA0C70502589F9F60084F7C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA085957258230FA00FAE9E1 /* UserDefaultsCity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA0C7055258A14F80084F7C2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FACE039425540B73005C776E /* AppDelegate.swift */,
+				FACE039625540B73005C776E /* SceneDelegate.swift */,
+				FACE03D625540CDB005C776E /* Extension+String.swift */,
+				FACAC5782587907D008EAD50 /* Localizable.strings */,
+				FACE039D25540B77005C776E /* Assets.xcassets */,
+				FACE039F25540B77005C776E /* LaunchScreen.storyboard */,
+				FACE03A225540B77005C776E /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		FA0E2844256CD3680009DC12 /* MapModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +216,6 @@
 				FA33E2D525810CD300412845 /* CoordinateEntity+CoreDataClass.swift */,
 				FA33E2D625810CD300412845 /* CoordinateEntity+CoreDataProperties.swift */,
 				FACFCDA5257A5C8200493E65 /* CoreDataCity.xcdatamodeld */,
-				FA085957258230FA00FAE9E1 /* StoreCity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,13 +264,7 @@
 				FACE03B325540CD0005C776E /* Models */,
 				FACE03B625540CD0005C776E /* Screens */,
 				FACE03AB25540CD0005C776E /* Service */,
-				FACE039425540B73005C776E /* AppDelegate.swift */,
-				FACE039625540B73005C776E /* SceneDelegate.swift */,
-				FACE03D625540CDB005C776E /* Extension+String.swift */,
-				FACAC5782587907D008EAD50 /* Localizable.strings */,
-				FACE039D25540B77005C776E /* Assets.xcassets */,
-				FACE039F25540B77005C776E /* LaunchScreen.storyboard */,
-				FACE03A225540B77005C776E /* Info.plist */,
+				FA0C7055258A14F80084F7C2 /* Support */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -289,10 +345,10 @@
 		FACFCD7C257A5A7900493E65 /* StoreManager */ = {
 			isa = PBXGroup;
 			children = (
-				FA5CE775257F636A00E10787 /* Models */,
 				FACFCDD9257A69F100493E65 /* StoreManagerProtocol.swift */,
-				FACFCDAA257A5D8E00493E65 /* CoreDataStore.swift */,
-				FACE03AD25540CD0005C776E /* UserDefaultsStore.swift */,
+				FA0C704E2589F9630084F7C2 /* UserDefaults */,
+				FA0C704C2589F92D0084F7C2 /* CoreData */,
+				FA0C704F2589F9B20084F7C2 /* Realm */,
 			);
 			path = StoreManager;
 			sourceTree = "<group>";
@@ -341,6 +397,7 @@
 			name = Weather;
 			packageProductDependencies = (
 				FA1C227F255425A500F1B1B9 /* SDWebImageSVGCoder */,
+				FA0C70392589E6620084F7C2 /* RealmSwift */,
 			);
 			productName = Weather;
 			productReference = FACE039125540B73005C776E /* Weather.app */;
@@ -394,6 +451,7 @@
 			mainGroup = FACE038825540B73005C776E;
 			packageReferences = (
 				FA1C227E255425A500F1B1B9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+				FA0C70382589E6620084F7C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = FACE039225540B73005C776E /* Products */;
 			projectDirPath = "";
@@ -434,9 +492,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0C703E2589E7D20084F7C2 /* RealmStore.swift in Sources */,
 				FACE03CE25540CD1005C776E /* DetailViewModel.swift in Sources */,
 				FACFCDA7257A5C8200493E65 /* CoreDataCity.xcdatamodeld in Sources */,
 				FAE0F0F4256D1293004AAF2D /* Citiy.swift in Sources */,
+				FA0C70432589EFD00084F7C2 /* CityRealm.swift in Sources */,
 				FA0E2866256CF7DC0009DC12 /* DetailRouter.swift in Sources */,
 				FA33E2D925810CD300412845 /* CoordinateEntity+CoreDataClass.swift in Sources */,
 				FACE03D025540CD1005C776E /* MainViewController.swift in Sources */,
@@ -467,7 +527,7 @@
 				FACE039725540B73005C776E /* SceneDelegate.swift in Sources */,
 				FA33E2DA25810CD300412845 /* CoordinateEntity+CoreDataProperties.swift in Sources */,
 				FACE03C725540CD1005C776E /* Assembly.swift in Sources */,
-				FA085958258230FA00FAE9E1 /* StoreCity.swift in Sources */,
+				FA085958258230FA00FAE9E1 /* UserDefaultsCity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,7 +697,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PSSGUD5C34;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,7 +716,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PSSGUD5C34;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,6 +803,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA0C70382589E6620084F7C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.0;
+			};
+		};
 		FA1C227E255425A500F1B1B9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
@@ -754,6 +822,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA0C70392589E6620084F7C2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA0C70382589E6620084F7C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		FA1C227F255425A500F1B1B9 /* SDWebImageSVGCoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA1C227E255425A500F1B1B9 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
