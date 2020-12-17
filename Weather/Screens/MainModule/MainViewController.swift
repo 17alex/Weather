@@ -220,24 +220,26 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteString = NSLocalizedString("Delete", comment: "")
+//        let deleteString = NSLocalizedString("Delete", comment: "")
         
-        let deleteAction = UIContextualAction(style: .destructive, title: deleteString) { (action,view,completionHandler) in
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action,view,completionHandler) in
             self.presenter.removeCity(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
+        deleteAction.image = UIImage(systemName: "trash")
         deleteAction.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let renameString = NSLocalizedString("Rename", comment: "")
+//        let renameString = NSLocalizedString("Rename", comment: "")
         
-        let renameAction = UIContextualAction(style: .normal, title: renameString) { (action,view,completionHandler) in
+        let renameAction = UIContextualAction(style: .normal, title: nil) { (action,view,completionHandler) in
             self.presenter.renameCityAction(at: indexPath.row)
             completionHandler(true)
         }
+        renameAction.image = UIImage(systemName: "pencil")
         renameAction.backgroundColor = .orange
         return UISwipeActionsConfiguration(actions: [renameAction])
     }
