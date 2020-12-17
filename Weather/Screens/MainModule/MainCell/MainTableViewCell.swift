@@ -33,7 +33,7 @@ class MainTableViewCell: UITableViewCell {
         super.prepareForReuse()
         cityNameLabel.text = "City"
         conditionLabel.text = "----"
-        tempLabel.text = "--℃"
+        tempLabel.text = "---℃"
         iconImageView.image = nil
     }
     
