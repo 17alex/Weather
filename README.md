@@ -1,6 +1,6 @@
 # Lenta
 
-View posts in the feed, add new post, and delete old post. Puts likes. Login and registration. Write comments. (in development)
+find location of cities and save to list, and viewing the weather with Yandex API
 ***
 ![](https://monsterok.ru/readme/weather1.jpg)  
 ***
