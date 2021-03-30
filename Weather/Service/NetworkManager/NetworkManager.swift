@@ -25,6 +25,18 @@ class NetworkManager {
 
 extension NetworkManager: NetworkManagerProtocol {
     func getWeather(location: CLLocationCoordinate2D, complete: @escaping (Result<ServerWeather, Error>) -> Void) {
+        //TODO:-
+        
+//        var components = URLComponents()
+//        components.scheme = "https"
+//        components.host = "google.com"
+//        components.path = "/search"
+//        components.queryItems = [URLQueryItem]()
+//        components.queryItems?.append(URLQueryItem(name: "q", value: "\(track.artist) \(track.title)"))
+//        return components.url
+        
+        
+        
         let urlString = "https://api.weather.yandex.ru/v2/informers?lat=\(location.latitude)&lon=\(location.longitude)&lang=ru_RU"
         let url = URL(string: urlString)!
         var request = URLRequest(url: url, timeoutInterval: 90)

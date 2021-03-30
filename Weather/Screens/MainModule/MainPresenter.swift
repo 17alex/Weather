@@ -26,7 +26,7 @@ protocol MainViewOutput {
 protocol MainInteractorOutput: class {
     func didUpdate(for city: City)
     func didAdd(newCity: City)
-    func notFindLocation(for cityName: String, error: Error)
+    func didNotFindLocation(for cityName: String, error: Error)
     func didAlreadyExists(city: City)
 }
 
@@ -37,7 +37,7 @@ class MainPresenter {
     var router: MainRouterProtocol!
     private let interactor: MainInteractorInput
     unowned var view: MainViewInput!
-    
+    //TODO: - init(view: MainViewInput)
     //MARK: - Init
     
     init(interactor: MainInteractorInput) {
@@ -138,7 +138,7 @@ extension MainPresenter: MainInteractorOutput {
         }
     }
     
-    func notFindLocation(for cityName: String, error: Error) {
+    func didNotFindLocation(for cityName: String, error: Error) {
         view.activityIndicator(animate: false)
         view.showAlertNotLocationFor(cityName: cityName, error: error)
     }

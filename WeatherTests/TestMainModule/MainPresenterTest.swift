@@ -206,7 +206,7 @@ class MainPresenterTest: XCTestCase {
     func testNotFindLocation() {
         let testCityName = "TestName"
         let testError: Error = "TestError"
-        presenter.notFindLocation(for: testCityName, error: testError)
+        presenter.didNotFindLocation(for: testCityName, error: testError)
         XCTAssertEqual(testCityName, view.cityName)
     }
 }

@@ -110,7 +110,7 @@ extension MainInteractor: MainInteractorInput {
             case .success(let locaton):
                 self.add(new: cityName, coordinate: locaton)
             case .failure(let error):
-                self.presenter.notFindLocation(for: cityName, error: error)
+                self.presenter.didNotFindLocation(for: cityName, error: error)
             }
         }
     }

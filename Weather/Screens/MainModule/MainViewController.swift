@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.refreshControl = refreshControl
+            tableView.tableHeaderView = searchController.searchBar
             tableView.rowHeight = 60
         }
     }
@@ -48,10 +49,29 @@ class MainViewController: UIViewController {
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         return searchController
+        
+//        searchController.searchResultsUpdater = self
+//        searchController.dimsBackgroundDuringPresentation = false
+//        searchController.searchBar.sizeToFit()
+        
+        // Add UISearchController to the tableView
+//        tableView.tableHeaderView = searchController.searchBar
+//        tableView.tableHeaderView?.backgroundColor = UIColor.clear
+//        definesPresentationContext = true
+//        searchController.hidesNavigationBarDuringPresentation = false
+        
+        // Style the UISearchController
+//        searchController.searchBar.barTintColor = UIColor.clear
+//        searchController.searchBar.tintColor = UIColor.white
+        
     }()
 
     private let refreshControl: UIRefreshControl = {
         let refControl = UIRefreshControl()
+        
+//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: [.foregroundColor: UIColor.white])
+//        refreshControl.backgroundColor = .black
+        
         refControl.tintColor = .red
         refControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         return refControl
@@ -86,7 +106,7 @@ class MainViewController: UIViewController {
         let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCityButtonPress))
         navigationItem.leftBarButtonItem = arrowBarButtonItem
         navigationItem.rightBarButtonItem = addBarButtonItem
-        navigationItem.searchController = searchController
+//        navigationItem.searchController = searchController
     }
     
     private func changeSearch(text: String?) {

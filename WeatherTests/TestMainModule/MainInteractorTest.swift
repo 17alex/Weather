@@ -100,7 +100,7 @@ class MockMainPresenter: MainInteractorOutput {
         
     }
     
-    func notFindLocation(for cityName: String, error: Error) {
+    func didNotFindLocation(for cityName: String, error: Error) {
         
     }
     
